@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
-    public function hello() {
+    public function hello()
+    {
         return 'Hello World';
     }
-}
 
-Route::get('/hello', [WelcomeController::class, 'hello']);
+    public function greeting()
+    {
+        return view('blog.hello')
+            ->with('name', 'Cakra Wangsa M.A.W')
+            ->with('occupation', 'Astronaut');
+    }
+}
